@@ -25,6 +25,10 @@ router.register(r'stockreports', views.StockView, 'stockreports')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('api/stocks/', views.add_stock, name='add-stock'),
-    path('api/dashboard/<int:id>/', views.get_stock_by_id, name='get-dashboard')
+    path('api/addStock/', views.add_stock, name='add-stock'),
+    path('api/dashboard/<int:id>/', views.get_stock_by_id, name='get-dashboard'),
+    path('api/getAll/', views.getAll, name='get-all-stocks'),
+    path('api/getStocksByDashboardId/<int:id>/', views.get_stocks_by_dashboard_id, name='get-stocks-by-dashboard-id'),
+    path('api/getCompanies/', views.get_companies, name='get-companies'),
+    path('api/getGraphByTicker/<str:ticker>/', views.get_graph_by_ticker, name='get-graph-by-ticker')
 ]

@@ -3,6 +3,6 @@ from .models import Stocks
 # Register your models here.
 
 class stockreportsAdmin(admin.ModelAdmin):
-    list_display = ('name', 'ticker', 'openPrice', 'closePrice', 'high', 'low')
+    list_display = ('name', 'dashboardId', 'dashboardName', 'ticker')
 
 admin.site.register(Stocks, stockreportsAdmin)
